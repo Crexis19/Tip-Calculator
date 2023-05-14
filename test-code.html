@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Inter&family=Merriweather&family=Montserrat:wght@400;500;700&family=Playfair+Display&family=Sacramento&display=swap" rel="stylesheet">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="phone">
+        <select class="form-control" value="Change" onchange="switchVisible();">
+            <option selected>Australia</option>
+            <option value="1">Japan</option>
+          </select>
+    <div class="root">
+      <div id=Div1 class="Australia">
+      <p class="intro">The tipping culture in:</p>
+      <h1 class="country">Australia</h1> 
+      <p class="details">Tipping is not mandatory but the staff always appreciates it. Stick to the 10-15% rule.</p>
+      </div>
+      <div id="Div2" class="Japan">
+        <p class="intro">The tipping culture in:</p>
+        <h1 class="country">Japan</h1> 
+        <h5 class="details">Tipping is not customary in Japan. In fact, it can be considered rude and insulting in many situations.</h5>
+        </div>
+       
+      <div id="Div3" class="container">
+        <div class="setup-side">
+          <h3 class="mini-title">Bill</h3>
+          <div class="input-field">
+            <img src="images/dollar-sign.png" alt="dollar icon" class="input-icon">
+            <input type="text" placeholder="0" class="input-text" id="billAmount">
+          </div>
+          <h3 class="mini-title">Select Tip %</h3>
+          <div class="tip-row">
+            <!-- <div class="tip-item" onclick="updateTipPercentage(5)">5%</div> -->
+            <div class="tip-item active" onclick="updateTipPercentage(10)">10%</div>
+            <div class="tip-item" onclick="updateTipPercentage(15)">15%</div>
+            <!-- <div class="tip-item" onclick="updateTipPercentage(25)">25%</div> -->
+            <!-- <div class="tip-item" onclick="updateTipPercentage(50)">50%</div> -->
+            <input type="text" class="custom-tip" placeholder="Custom" oninput="updateCustomTipPercentage(event)">
+          </div>
+          <h3 class="mini-title">Number Of People</h3>
+          <div class="input-field">
+            <img src="images/person.png" alt="dollar icon" class="input-icon">
+            <input type="text" placeholder="0" class="input-text" id="numberOfPeople" oninput="updateNumberOfPeople(event)">
+          </div>
+        </div>
+        <div class="result-side">
+          <div class="result-row">
+            <div class="left-side">
+              <h3 class="result-name">Tip Amount</h3>
+              <h4 class="person">/ person</h4>
+            </div>
+            <h2 class="total-amount" id="tipAmount">$0.00</h2>
+          </div>
+          <div class="result-row">
+            <div class="left-side">
+              <h3 class="result-name">Total</h3>
+              <h4 class="person">/ person</h4>
+            </div>
+            <h2 class="total-amount" id="totalAmount">$0.00</h2>
+          </div>
+          <button class="btn" onclick="resetCalculator()">RESET</button>
+        </div>
+      </div>
+    </div>
+ </body>
+ <script src="script.js"></script>
+
+</html>
